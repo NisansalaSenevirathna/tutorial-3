@@ -1,9 +1,9 @@
 object Q4 extends App{
 
-  def discount(price:Double):Double=price *40/100;
-  def shipping_cost(copies:Int):Double=3*50 +(copies-50)*0.75;
-  def books(price:Double , copies:Int):Double=price * copies;
-  def total_cost(price:Double , copies:Int):Double =books(price ,copies) - discount(books(price,copies)) + shipping_cost(copies);
+  def book_price(copies:Int):Double=copies * 24.95; //total amount for x books
+  def discount(amount:Double):Double=amount * 40/100;
+  def shopping_cost(copies:Int):Double= 3 *50 + (copies-50) * 0.75;
+  def total_cost(copies :Int):Double =book_price(copies) - discount(book_price(copies)) + shopping_cost(copies);
 
-  printf("\nTotal cost is:%.2f\n",total_cost(24.95,60));
+  printf("\nTotal cost is:%.2f\n",total_cost(60));
 }
